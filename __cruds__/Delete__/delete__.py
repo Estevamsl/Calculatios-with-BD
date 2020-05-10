@@ -25,3 +25,4 @@ class CRUDDelete__:
                             print('Dados deletados com sucesso')
                 except:
                     print('\033[31mHouve um pequeno error\033[m')
+

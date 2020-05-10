@@ -26,39 +26,77 @@ class Main(__MixinCalculadora__):
             except ValueError:
                 print('Houve um erro de valor')
 
-            try:
-                __n1__ = int(
-                    input('Digite o primeiro número: \033[36m'))
-                print('\033[m')
-            except ValueError:
-                print('Houve um erro de valor')
-            try:
-                __n2__ = int(
-                    input('Digite o segundo número: \033[36m'))
-                print('\033[m')
-            except ValueError:
-                print('Houve um erro de valor')
-
-            if (__op__ == 1):
-                # super().somar(__n1__, __n2__)
-                CRUDInsert__().CRUDINSERT().Insert().__SUM__(__n1__, __n2__)
-                # CRUDConsult__().
-                # self.system('cls')
-            elif (__op__ == 2):
-                super().subtrair(__n1__, __n2__)
-                CRUDInsert__().CRUDINSERT().Insert().__SUB__(__n1__, __n2__)
-                # self.system('cls')
-            elif (__op__ == 3):
-                super().produto(__n1__, __n2__)
-                CRUDInsert__().CRUDINSERT().Insert().__PRO__(__n1__, __n2__)
-                # self.system('cls')
-            elif (__op__ == 4):
-                super().dividir(__n1__, __n2__)
-                CRUDInsert__().CRUDINSERT().Insert().__DIV__(__n1__, __n2__)
-                # self.system('cls')
+            if (__op__ < 0 or __op__ > 5):
+                print('\033[31mTente uma opção melhor no menu\033[m')
             else:
-                __op__ = 0
-                self.system('cls')
+                if (__op__ == 1):
+                    try:
+                        __n1__ = int(
+                            input('Digite o primeiro número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    try:
+                        __n2__ = int(
+                            input('Digite o segundo número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    super().somar(__n1__, __n2__)
+                    CRUDInsert__().CRUDINSERT().Insert().__SUM__(__n1__, __n2__)
+                    # CRUDConsult__().
+                    # self.system('cls')
+                elif (__op__ == 2):
+                    try:
+                        __n1__ = int(
+                            input('Digite o primeiro número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    try:
+                        __n2__ = int(
+                            input('Digite o segundo número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    super().subtrair(__n1__, __n2__)
+                    CRUDInsert__().CRUDINSERT().Insert().__SUB__(__n1__, __n2__)
+                    # self.system('cls')
+                elif (__op__ == 3):
+                    try:
+                        __n1__ = int(
+                            input('Digite o primeiro número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    try:
+                        __n2__ = int(
+                            input('Digite o segundo número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    super().produto(__n1__, __n2__)
+                    CRUDInsert__().CRUDINSERT().Insert().__PRO__(__n1__, __n2__)
+                    # self.system('cls')
+                elif (__op__ == 4):
+                    try:
+                        __n1__ = int(
+                            input('Digite o primeiro número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    try:
+                        __n2__ = int(
+                            input('Digite o segundo número: \033[36m'))
+                        print('\033[m')
+                    except ValueError:
+                        print('Houve um erro de valor')
+                    super().dividir(__n1__, __n2__)
+                    CRUDInsert__().CRUDINSERT().Insert().__DIV__(__n1__, __n2__)
+                    # self.system('cls')
+                else:
+                    __op__ = 0
+                    self.system('cls')
 
     @property
     def OP_Bd(self) -> any:
@@ -72,34 +110,39 @@ class Main(__MixinCalculadora__):
             except ValueError:
                 print('\033[31mHouve um erro de valor\033[m')
 
-            if (0 > __op__ > 5):
+            if (0 > __op__ or __op__ > 5):
                 print('Opção incorreta, tente novamente')
             else:
                 if (__op__ == 1):
                     # self.system('cls')
-                    print('\033[34m[1]\033[m - \033[36mSomar:\033[36m\n\033[34m[2]\033[m - \033[36mSubtrair:\033[m\n\033[34m[3]\033[m - \033[36mProduto\033[m\n\033[34m[4]\033[m - \033[36mDivisão:\033[m')
+                    print('\033[34m[1]\033[m - \033[36mSomar:\033[36m\n\033[34m[2]\033[m - \033[36mSubtrair:\033[m\n\033[34m[3]\033[m - \033[36mProduto\033[m\n\033[34m[4]\033[m - \033[36mDivisão:\033[m\n\033[34m[5]\033[m - \033[36mSair:\033[m')
 
-                    try:
-                        __op__ = int(input('Digite a sua opção: \033[30m'))
-                        print('\033[m')
-                    except ValueError:
-                        print(
-                            "\033[31mErr de tipo, favor tentar novamente\033[m")
-
-                    if (__op__ == 1):
-                        pass
-                        CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__sm__
-                    elif (__op__ == 2):
-                        pass
-                        CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__sb__
-                    elif (__op__ == 3):
-                        pass
-                        CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__pro__
-                    elif (__op__ == 4):
-                        pass
-                        CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__di__
-                    elif (__op__ == 5):
-                        __op__ = 0
+                    __o__ = 1
+                    while (__o__ > 0):
+                        try:
+                            __op__ = int(input('Digite a sua opção: \033[30m'))
+                            print('\033[m')
+                        except ValueError:
+                            print(
+                                "\033[31mErr de tipo, favor tentar novamente\033[m")
+                        if (__op__ > 5 or __op__ < 1):
+                            print(
+                                '\033[31mDigite uma opção coerente, caso contrário, irei perguntar novamente, ou simplesmente saia daqui\033[m')
+                        else:
+                            if (__op__ == 1):
+                                pass
+                                CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__sm__
+                            elif (__op__ == 2):
+                                pass
+                                CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__sb__
+                            elif (__op__ == 3):
+                                pass
+                                CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__pro__
+                            elif (__op__ == 4):
+                                pass
+                                CRUDConsult__().CRUDCONSULT().Consult().Consult_Por_Operacao().__di__
+                            elif (__op__ == 5):
+                                __o__ = 0
 
                     # CRUDConsult__().CRUDCONSULT().Consult().__C__
                     pass
@@ -132,11 +175,15 @@ class Main(__MixinCalculadora__):
         while (__op__ != 0):
             self.__prin__  # Menu Principal
 
-            try:
-                __op__ = int(input('Digite a sua opção: \033[36m'))
-                print('\033[m')
-            except ValueError:
-                print('\033[31mHouve um erro de valor\033[m')
+            while (True):
+                try:
+                    __op__ = int(input('Digite a sua opção: \033[36m'))
+                    print('\033[m')
+                    if (__op__):
+                        break
+                except ValueError:
+                    print('\033[31mHouve um erro de valor\033[m')
+                    self.__prin__  # Recursion
 
             if (__op__ > 0):
 

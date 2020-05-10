@@ -14,19 +14,21 @@ class CRUDUpdate__:
                 try:
                     with con.cursor() as cursor:
                         try:
-                            cursor.execute('''select ifnull(__s__.number1, '0') as number1 , ifnull(__s__.number2, '0') as number2, ifnull(__s__.Soma, '0') as Soma, 
-                                           ifnull(__sub__.number1, '0') as number, ifnull(__sub__.number2, '0') as number2, ifnull(__sub__.Subtracao, '0') as Subtracao, 
-                                            ifnull(__p__.number1, '0') as number1, ifnull(__p__.number2, '0') as number2, ifnull(__p__.Produto, '0') as Produto,
-                                             ifnull(__d__.number1, '0') as number1, ifnull(__d__.number2, '0') as number2, ifnull(__d__.Divisao, '0') as Divisao
-                                                from Soma __s__
+                            cursor.execute(f'''select 
+                                                ifnull(__s__.id, 'Sem indentificação') as id, ifnull(__s__.number1, 0) as number1 , ifnull(__s__.number2, 0) as number2, ifnull(__s__.Soma, 0) as Soma, 
+                                                ifnull(__sub__.id, 'Sem indentificação') as id, ifnull(__sub__.number1, 0) as number, ifnull(__sub__.number2, 0) as number2, ifnull(__sub__.Subtracao, 0) as Subtracao, 
+                                                ifnull(__p__.id, 'Sem indentificação') as id, ifnull(__p__.number1, 0) as number1, ifnull(__p__.number2, 0) as number2, ifnull(__p__.Produto, 0) as Produto,
+                                                ifnull(__d__.id, 'Sem indentificação') as id, ifnull(__d__.number1, 0) as number1, ifnull(__d__.number2, 0) as number2, ifnull(__d__.Divisao, 0) as Divisao
+                                                    from Soma __s__
                                                     left join Subtracao __sub__
                                                     on __s__.id=__sub__.id
                                                     left join Divisao __d__
                                                     on __s__.id=__d__.id
                                                     left join Produto __p__
-                                                    on __s__.id=__p__.id
-                            ''')
+                                                    on __s__.id=__p__.id;
+                                            ''')
                             __cur__ = cursor.fetchall()
+
                             for __c__ in __cur__:
                                 print(__c__)
                         except:
@@ -47,22 +49,23 @@ class CRUDUpdate__:
                         print(
                             '\033[31mHouve um erro de tipo, tente novamente\033[m')
 
-                    try:
-                        __n1__ = int(input('Digite o 1° Número: \033[36m'))
-                        print('\033[m')
-                    except ValueError:
-                        print('\033[31mNúmero incorreto\033[m')
-
-                    try:
-                        __n2__ = int(input('Digite o 2° Número: \033[36m'))
-                        print('\033[m')
-                    except ValueError:
-                        print('\033[31mNúmero incorreto')
-
                     if (__op__ < 0 or __op__ > 5):
                         print('\033[31mEscolha errada, tente novamente\033[m')
                     else:
                         if (__op__ == 1):
+                            try:
+                                __n1__ = int(
+                                    input('Digite o 1° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto\033[m')
+
+                            try:
+                                __n2__ = int(
+                                    input('Digite o 2° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto')
                             try:
                                 with con.cursor() as cursor:
                                     try:
@@ -109,6 +112,19 @@ class CRUDUpdate__:
                                 print('\033[31mHouve um pequeno erro\033[m')
 
                         elif (__op__ == 2):
+                            try:
+                                __n1__ = int(
+                                    input('Digite o 1° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto\033[m')
+
+                            try:
+                                __n2__ = int(
+                                    input('Digite o 2° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto')
                             try:
                                 with con.cursor() as cursor:
                                     try:
@@ -157,6 +173,19 @@ class CRUDUpdate__:
 
                         elif (__op__ == 3):
                             try:
+                                __n1__ = int(
+                                    input('Digite o 1° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto\033[m')
+
+                            try:
+                                __n2__ = int(
+                                    input('Digite o 2° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto')
+                            try:
                                 with con.cursor() as cursor:
                                     try:
                                         cursor.execute('select * from Produto')
@@ -203,6 +232,19 @@ class CRUDUpdate__:
                                 print('\033[31mHouve um pequeno erro\033[m')
 
                         elif (__op__ == 4):
+                            try:
+                                __n1__ = int(
+                                    input('Digite o 1° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto\033[m')
+
+                            try:
+                                __n2__ = int(
+                                    input('Digite o 2° Número: \033[36m'))
+                                print('\033[m')
+                            except ValueError:
+                                print('\033[31mNúmero incorreto')
                             try:
                                 with con.cursor() as cursor:
                                     try:
